@@ -1,5 +1,8 @@
 <?php
 
+echo "Bonjour ! Quel est ton prénom ? \n"; 
+$prénom=trim (fgets(STDIN));
+echo "A toi de jouer ! \n";
 
 $questions = [
     "Quelle est la couleur du cheval blanc d'Henri IV?\n1.Blanc\n2.Rouge\n3.Noir\n",
@@ -24,7 +27,7 @@ for($i = 0; $i < $NB_QUESTIONS; $i++){
 if ($réponse1 == $reponses[$i]) {
         echo "suspennnce ! \nBravo ! \nLe score augmente de 10 \n";
         $score=$score+10;
-        echo "votre score est de $score \n";
+        echo "votre score est de $score  sur 50 \n";
         }
         else{
         echo "Suspennnce !\nNON !\nLe score n'augmente pas :( \n";
@@ -39,9 +42,22 @@ $score1=$score/50 * 100;
 
 if ($score1 >= 50) {
 
-echo "Bravo ! vous avez un score de : $score1 %\n";
+echo "Bravo ! $prénom tu as un score de : $score1 %\n";
 }
 else{
-    echo "OUPS ! votre score est de : $score1 % vous n'avez pas dépassé la barre des 50% de bonnes réponses\n";
+    echo "OUPS ! $prénom ton score est de : $score1 % vous n'avez pas dépassé la barre des 50% de bonnes réponses\n";
 }
 echo "GAME OVER\n";
+
+
+// Read score
+// $prénom = fopen ($prenom,"w+");
+$fichier = fopen("save.txt","a+");
+
+// fopen renvoi false si le fichier n'existe pas
+if($fichier == false){
+    $fichier = fopen("save.txt","a+");
+
+}
+
+fwrite($fichier,$prénom .": ". $score."\n");

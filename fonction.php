@@ -85,25 +85,79 @@
 // $fahrenheit = celsiusenfahrenheit($degré);
 // echo "le température en fahrenheit est : $fahrenheit \n";
 
-function compterlesvoyelles($caractères) {
-    $compter = 0; // Initialiser le compteur
-    $voyelles = ['a', 'e', 'i', 'o', 'u', 'y']; // Définir les voyelles
+// function compterlesvoyelles($caractères) {
+//     $compter = 0; // Initialiser le compteur
+//     $voyelles = ['a', 'e', 'i', 'o', 'u', 'y']; // Définir les voyelles
 
-    // Convertir la chaîne en minuscules pour faciliter la comparaison
-    $caractères = strtolower($caractères);
+//     // Convertir la chaîne en minuscules pour faciliter la comparaison
+//     $caractères = strtolower($caractères);
 
-    // Parcourir chaque caractère de la chaîne
-    for ($i = 0; $i < strlen($caractères); $i++) {
-        // Vérifier si le caractère est une voyelle
-        if (in_array($caractères[$i], $voyelles)) {
-            $compter++; // Incrémenter le compteur
-        }
-    }
-    return $compter; // Retourner le nombre de voyelles
+//     // Parcourir chaque caractère de la chaîne
+//     for ($i = 0; $i < strlen($caractères); $i++) {
+//         // Vérifier si le caractère est une voyelle
+//         if (in_array($caractères[$i], $voyelles)) {
+//             $compter++; // Incrémenter le compteur
+//         }
+//     }
+//     return $compter; // Retourner le nombre de voyelles
+// }
+
+// echo "Écrire une phrase : \n";
+// $caractères = trim(fgets(STDIN));
+// echo 'Le nombre de voyelles est : ' . compterlesvoyelles($caractères) . "\n";
+
+
+// function inversetableau($tableau) {
+//     return array_reverse($tableau);
+// }
+
+// $tableau = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+
+// echo "Montre-moi le tableau : " . implode(", ", $tableau) . "\n";
+// $tableauInverse = inversetableau($tableau);
+// echo "Montre-moi le tableau inversé : " . implode(", ", $tableauInverse) . "\n";
+
+
+// function estpalindrome($chaînedecaractère) {
+//     $inverse = strrev($chaînedecaractère); // Inverser la chaîne
+//     if ($chaînedecaractère == $inverse) { // Comparer la chaîne originale avec l'inversée
+//         return true; // C'est un palindrome
+//     } else {
+//         return false; // Ce n'est pas un palindrome
+//     }
+// }
+
+// echo "Écrivez un mot pour savoir si c'est un palindrome : \n";
+// $chaînedecaractère = trim(fgets(STDIN)); // Lire l'entrée de l'utilisateur
+// if (estpalindrome($chaînedecaractère)) {
+//     echo "$chaînedecaractère est un palindrome \n";
+// } else { 
+//     echo "$chaînedecaractère n'est pas un palindrome \n";
+// }
+
+
+// function trouvermaximum($nombres) {
+//     return max($nombres);
+// }
+
+// echo "Quel est le plus grand nombre (5,6,12,8,4,2) : \n";
+// // $input = fgets(STDIN);
+// $nombres = [5, 6, 8, 12, 4, 2]; // Vous pouvez également utiliser les nombres fournis par l'utilisateur si nécessaire
+
+// $nombres_max = trouvermaximum($nombres);
+// echo "C'est $nombres_max\n";
+    
+    function fusionnertableau() {
+    $tableau = ["tomates", "céleri", "choux", "betteraves"];
+    $tableau1 = ["cerise", "abricot", "pêche", "camembert"];
+
+    $resultat = array_merge($tableau, $tableau1);
+    return $resultat;
 }
+$tableauxFusionnes = fusionnertableau();
+echo "Dans ma liste 1, j'ai des tomates, céleri, choux et betteraves, si je rajoute ma liste 2, j'aurai :\n";
+echo implode(", ", $tableauxFusionnes); 
 
-echo "Écrire une phrase : \n";
-$caractères = trim(fgets(STDIN));
-echo 'Le nombre de voyelles est : ' . compterlesvoyelles($caractères) . "\n";
+
 
 
